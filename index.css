@@ -17,3 +17,6 @@ text-align: center;
     width: 225px;
     margin: auto;
 }
+#restartBtn{
+    cursor: pointer;
+}
