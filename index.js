@@ -13,6 +13,7 @@ const winConditions = [
     [2, 4, 6]
 
 ];
+// helps me to know current state of the game .options array//
 let options = ["", "", "", "", "", "", "", "", ""]; 
     let currentPlayer = "X"
 let running = false
@@ -33,14 +34,17 @@ function initializeGame() {
     // changePlayer()
     checkWinner()
  }  
+ //function for updating the x and 0 to the cells
  function updateCell(cell,index){
     options[index] = currentPlayer 
     cell.textContent = currentPlayer
  }
+ // function for changing players
  function changePlayer(){
 currentPlayer = (currentPlayer == "X") ? "O" : "X";
 statusText.textContent = `${currentPlayer}'s turn`;
  }
+ //this is the function for checking winners
  function checkWinner (){
     let roundWon = false
     for( let i = 0; i <winConditions.length; i++ ){
@@ -69,6 +73,7 @@ statusText.textContent = `${currentPlayer}'s turn`;
         changePlayer()
     }
  }
+ //function for restarting the game
  function restartGame (){
 currentPlayer = "X"
 options = ["", "", "", "", "", "", "", "", ""]; 
